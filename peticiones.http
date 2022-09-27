@@ -1,0 +1,67 @@
+POST http://127.0.0.1:8000/auth/signup HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+
+{
+    "username": "ivan",
+    "email": "ivan@ivan.com",
+    "password": "ivanivan"
+}
+###
+POST http://127.0.0.1:8000/auth/login HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+
+{
+    "username": "ivan",
+    "password": "ivanivan"
+}
+###
+GET  http://127.0.0.1:8000/auth/users HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJpdmFuIiwiaWF0IjoxNjY0MTgzNjc3LCJuYmYiOjE2NjQxODM2NzcsImp0aSI6IjEyMWMzZjUyLTE0NzItNGQzYS04NDQ0LTlhZWQ3Y2MxOTE1YSIsImV4cCI6MTY2NDE4NDU3NywidHlwZSI6ImFjY2VzcyIsImZyZXNoIjpmYWxzZX0.DmAarHQw8sH91p9MIJsMHxhqHllYwjg5glArgmHTGzU
+###
+POST http://127.0.0.1:8000/auth/refresh HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJpdmFuIiwiaWF0IjoxNjY0MTg0MzQ4LCJuYmYiOjE2NjQxODQzNDgsImp0aSI6Ijg4NTI2YjE0LTczMjEtNDE1Mi05MjZmLWNiNjQyYWJiOTBjZiIsImV4cCI6MTY2Njc3NjM0OCwidHlwZSI6InJlZnJlc2gifQ.npoMIkaF2z-n5HUpBuozGkgR2PMWKmiGBF_-YAbCWK8
+
+###
+POST http://127.0.0.1:8000/orders/create HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJpdmFuIiwiaWF0IjoxNjY0MjA0MDQ5LCJuYmYiOjE2NjQyMDQwNDksImp0aSI6IjJiZGVjYjMxLWM1M2QtNDJjMS04MzE3LWI4ZTExNjMwZDE3NSIsImV4cCI6MTY2NDIwNDk0OSwidHlwZSI6ImFjY2VzcyIsImZyZXNoIjpmYWxzZX0.KPZGEzzv8rCRXkakcrzuxQaB66d2sflna7GaDXFlQPM
+
+{
+    "quantity": 5
+}
+###
+GET http://127.0.0.1:8000/orders/all HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJpdmFuIiwiaWF0IjoxNjY0MjU3NDQ3LCJuYmYiOjE2NjQyNTc0NDcsImp0aSI6IjcyMWU2OTVjLTA2NjgtNDA1Ni05NTllLWFhNzJhMWRiMTI1NCIsImV4cCI6MTY2NDI1ODM0NywidHlwZSI6ImFjY2VzcyIsImZyZXNoIjpmYWxzZX0.qC_vZ5YZPM_SLkXB1I5hQ3O1Z5w69lx48qdCzfgX-cY 
+###
+GET http://127.0.0.1:8000/orders/order/1 HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJpdmFuIiwiaWF0IjoxNjY0MjYwMDczLCJuYmYiOjE2NjQyNjAwNzMsImp0aSI6ImNkMTE4NGZiLTc4MjItNGEyNS1iNGEyLWU1MzNmNWMwMTEyMSIsImV4cCI6MTY2NDI2MDk3MywidHlwZSI6ImFjY2VzcyIsImZyZXNoIjpmYWxzZX0.xcNh66e6aiYeumQd-nWuTdP1_OJRlROQ_qPxht6lGrI
+###
+GET http://127.0.0.1:8000/orders/get HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJpdmFuIiwiaWF0IjoxNjY0MjYwMzk4LCJuYmYiOjE2NjQyNjAzOTgsImp0aSI6IjhmMjI5ZjQ4LTUyNmYtNGUyZS05OTVhLTYyZThkN2RkYmMyYyIsImV4cCI6MTY2NDI2MTI5OCwidHlwZSI6ImFjY2VzcyIsImZyZXNoIjpmYWxzZX0.Y7AM-k9b_2r7FJRzJiSSv-5T-qUdIwqMXl6Kh6I5BBA
+###
+PUT http://127.0.0.1:8000/orders/update/1 HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJpdmFuIiwiaWF0IjoxNjY0MjYxNDYyLCJuYmYiOjE2NjQyNjE0NjIsImp0aSI6IjZiZGEwYTAwLTIyNjctNDRmZC1hZmJiLWI3Y2Q2MTMyN2E1NCIsImV4cCI6MTY2NDI2MjM2MiwidHlwZSI6ImFjY2VzcyIsImZyZXNoIjpmYWxzZX0.QR3q5rq1hiZCwy2TJi501YIJhcc7tQsDRgR5gYnDZuU
+
+{
+    "order_status": "cancelled"
+}
+###
+DELETE http://127.0.0.1:8000/orders/delete/1 HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJpdmFuIiwiaWF0IjoxNjY0MjYxNDYyLCJuYmYiOjE2NjQyNjE0NjIsImp0aSI6IjZiZGEwYTAwLTIyNjctNDRmZC1hZmJiLWI3Y2Q2MTMyN2E1NCIsImV4cCI6MTY2NDI2MjM2MiwidHlwZSI6ImFjY2VzcyIsImZyZXNoIjpmYWxzZX0.QR3q5rq1hiZCwy2TJi501YIJhcc7tQsDRgR5gYnDZuU
